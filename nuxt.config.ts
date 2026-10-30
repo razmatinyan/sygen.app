@@ -3,6 +3,9 @@ import { colorSitemapPaths } from './app/lib/sitemap-colors'
 
 export default defineNuxtConfig({
 	compatibilityDate: '2026-09-30',
+	nitro: {
+		preset: 'cloudflare_pages',
+	},
 	devtools: { enabled: false },
 	runtimeConfig: {
 		public: {
@@ -14,6 +17,7 @@ export default defineNuxtConfig({
 	},
 	modules: [
 		'@nuxt/icon',
+		'@nuxt/image',
 		'shadcn-nuxt',
 		'@nuxtjs/sitemap',
 		'@nuxtjs/robots',
@@ -39,6 +43,9 @@ export default defineNuxtConfig({
 		clientBundle: {
 			scan: true,
 		},
+	},
+	image: {
+		provider: 'cloudflare',
 	},
 	site: {
 		url: 'https://sygenn.vercel.app',
